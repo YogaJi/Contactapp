@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:background="#000000"
+    android:backgroundTint="@color/teal_200"
+    >
+    <TextView
+        android:id="@+id/dialog_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Contact"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_marginTop="36dp"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_baseline_person_24"/>
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phoneLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="360dp">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_baseline_phone_24" />
+
+        <EditText
+            android:id="@+id/telephone_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Phone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/AddressLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="440dp">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_baseline_location_on_24" />
+
+        <EditText
+            android:id="@+id/address_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Phone" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/commit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="20dp"
+        android:text="submit" />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:layout_marginLeft="220dp"
+        android:text="Cancel"/>
+
+
+
+</RelativeLayout>
