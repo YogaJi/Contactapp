@@ -1,5 +1,6 @@
 package site.yogaji.contactapp;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -93,11 +94,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{searchName},
                 null, null, null);
         if (cursor != null && cursor.moveToNext()) {
-            int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
-            String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
-            int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
-            String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
-            String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
+            @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
+            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
+            @SuppressLint("Range") int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
+            @SuppressLint("Range") String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
+            @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
 //            int gender = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_GENDER));
             contact.setId(id);
             contact.setName(name);
@@ -126,11 +127,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 Contact contact = new Contact();
-                int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
-                String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
-                int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
-                String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
-                String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
+//                int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
+//                String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
+//                int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
+//                String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
+//                String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
+                @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
+                @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
+                @SuppressLint("Range") int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
+                @SuppressLint("Range") String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
+                @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
 //                int gender = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_GENDER));
                 contact.setId(id);
                 contact.setName(name);

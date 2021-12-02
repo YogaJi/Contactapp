@@ -6,15 +6,16 @@
     android:background="#000000"
     android:backgroundTint="@color/teal_200"
     >
+
     <TextView
         android:id="@+id/dialog_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:gravity="center"
-        android:text="Add Contact"
+        android:text="New Contact"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        android:layout_marginTop="36dp"/>
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/img"
@@ -28,13 +29,13 @@
         android:id="@+id/nameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:layout_marginBottom="0dp">
 
         <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/ic_baseline_person_24"/>
 
@@ -42,7 +43,7 @@
             android:id="@+id/name_et"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:hint="Name" />
 
     </LinearLayout>
 
@@ -50,12 +51,13 @@
         android:id="@+id/phoneLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="360dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp">
+
 
         <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/ic_baseline_phone_24" />
 
@@ -63,7 +65,8 @@
             android:id="@+id/telephone_et"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Phone" />
+            android:hint="Phone"
+             />
 
     </LinearLayout>
 
@@ -72,11 +75,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="440dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        >
 
         <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/ic_baseline_location_on_24" />
 
@@ -84,27 +89,31 @@
             android:id="@+id/address_et"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Phone" />
+            android:hint="Address" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/commit_btn"
+    <LinearLayout
+        android:id="@+id/ButtonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="530dp"
-        android:layout_marginBottom="20dp"
-        android:text="submit" />
+        android:layout_marginBottom="30dp"
+        >
+        <Button
+            android:id="@+id/commit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit" />
 
-    <Button
-        android:id="@+id/cancel_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="530dp"
-        android:layout_marginLeft="220dp"
-        android:text="Cancel"/>
-
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="Cancel" />
+    </LinearLayout>
 
 
 </RelativeLayout>

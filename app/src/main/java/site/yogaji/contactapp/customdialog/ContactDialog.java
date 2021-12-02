@@ -8,28 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
+import site.yogaji.contactapp.DatabaseHelper;
+import site.yogaji.contactapp.IGenerateContactListener;
+import site.yogaji.contactapp.OperationTypeEnum;
+import site.yogaji.contactapp.R;
+import site.yogaji.contactapp.model.Contact;
 
 import java.lang.ref.WeakReference;
 
-        import android.content.Context;
-        import android.os.AsyncTask;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.CheckBox;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
-
-        import androidx.appcompat.app.AlertDialog;
-        import java.lang.ref.WeakReference;
-        import site.yogaji.contactapp.DatabaseHelper;
-        import site.yogaji.contactapp.IGenerateContactListener;
-        import site.yogaji.contactapp.OperationTypeEnum;
-        import site.yogaji.contactapp.R;
-        import site.yogaji.contactapp.model.Contact;
 
 public class ContactDialog  implements View.OnClickListener {
     private Context context;
@@ -42,7 +29,7 @@ public class ContactDialog  implements View.OnClickListener {
     private Button cancelBtn;
     private IGenerateContactListener mListener;
     private Contact oldContact;
-    private Context mContext;
+//    private Context mContext;
     //    private CheckBox maleCb;
 //    private CheckBox femaleCb;
     private OperationTypeEnum operationType;
@@ -94,17 +81,14 @@ public class ContactDialog  implements View.OnClickListener {
     }
 
     private void findView(View view) {
-//        maleCb = view.findViewById(R.id.male_cb);
-//        femaleCb = view.findViewById(R.id.female_cb);
-//        View actionDialog = LayoutInflater.from(mContext).inflate(R.layout.action_dialog, null);
-//        Button editBtn = actionDialog.findViewById(R.id.edit_btn);
-//        Button deleteBtn = actionDialog.findViewById(R.id.delete_btn);
+
+        //      View actionDialog = LayoutInflater.from(mContext).inflate(R.layout.action_dialog, null);
         titleTv = view.findViewById(R.id.dialog_title_tv);
         nameEt = view.findViewById(R.id.name_et);
         telephoneEt = view.findViewById(R.id.telephone_et);
         addressEt = view.findViewById(R.id.address_et);
-        Button commitBtn = view.findViewById(R.id.commit_btn);
-        Button cancelBtn = view.findViewById(R.id.cancel_btn);
+        commitBtn = view.findViewById(R.id.commit_btn);
+        cancelBtn = view.findViewById(R.id.cancel_btn);
         commitBtn.setOnClickListener(this);
         cancelBtn.setOnClickListener(this);
 //        maleCb.setOnClickListener(this);
@@ -118,11 +102,12 @@ public class ContactDialog  implements View.OnClickListener {
                 titleTv.setText("Add Contact");
                 break;
             case UPDATE:
-                titleTv.setText("Edit Contact!");
+                titleTv.setText("Edit Contact");
                 initViewContent();
                 break;
             case QUERY:
-                titleTv.setText("Query Contact!");
+                titleTv.setText("Contact");
+//                titleTv.setVisibility(View.GONE);
                 initViewContent();
                 commitBtn.setVisibility(View.GONE);
                 commitBtn.setEnabled(false);

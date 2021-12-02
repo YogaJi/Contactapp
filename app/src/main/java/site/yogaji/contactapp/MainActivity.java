@@ -8,11 +8,13 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -45,18 +47,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<Contact> contactArrayList = new ArrayList<>();
     private DatabaseHelper databaseHelper;
     private EditText inputSearchNameEt;
+
+    //set sharedPreference:
+    private SharedPreferences prefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set up preference manager to xml preference
+        PreferenceManager.setDefaultValues(this,R.xml.preferences,false);
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
         //set up recycler view
         RecyclerView recyclerView = findViewById(R.id.my_recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
         //set up database
         databaseHelper = new DatabaseHelper(this);
         mAdapter = new MyRecyclerViewAdapter(contactArrayList);
         recyclerView.setAdapter(mAdapter);
+
         //set up asyncTask
         GetAllContactAsyncTask getAllContactAsyncTask = new GetAllContactAsyncTask(this);
         getAllContactAsyncTask.execute();
@@ -258,8 +271,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity mainActivity = activityWeakReference.get();
             if (mainActivity != null && !mainActivity.isFinishing()) {
                 if (contact != null) {
-                    new ContactDialog(mainActivity, OperationTypeEnum.QUERY, contact);
+                    //bug
+                   new ContactDialog(mainActivity, OperationTypeEnum.QUERY, contact);
                     mainActivity.inputSearchNameEt.setText("");
+                    Toast.makeText(mainActivity,
+                            "Find!",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 } else {
                     Toast.makeText(mainActivity,
                             "The people not survive in your list",
@@ -279,19 +297,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //select menu
     @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem item){
-//        switch (item.getItemId()){
-////            case R.id.menu_settings:
-////                startActivity(new Intent(
-////                        getApplicationContext(),
-////                        SettingsActivity.class
-////                ));
-//////                        Toast.makeText(this, "Settings Item", Toast.LENGTH_SHORT).show();
-////                break;
-//            case R.id.menu_add:
-//                break;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
+        switch (item.getItemId()){
+            case R.id.menu_settings:
+                startActivity(new Intent(
+                        getApplicationContext(),
+                        SettingActivity.class
+                ));
+                break;
+            case R.id.menu_delete_all:
+                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menu_About:
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return true;
     }
 
