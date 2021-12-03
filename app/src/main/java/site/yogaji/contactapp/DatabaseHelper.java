@@ -52,7 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion > 2) { //DATABASE_VERSION == 3
             db.execSQL("DROP TABLE IF EXISTS company");
         }
-//        super.onDowngrade(db, oldVersion, newVersion);
     }
 
     /**
@@ -63,9 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public long insertContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-//        values.put(Contact.COLUMN_AVATAR, contact.getGender() ? R.drawable.ic_baseline_person_24 : R.drawable.female_avatar_icon);
         values.put(Contact.COLUMN_NAME, contact.getName());
-//        values.put(Contact.COLUMN_GENDER, businessCard.getGender() ? 1 : 0);
         values.put(Contact.COLUMN_TELEPHONE, contact.getTelephone());
         values.put(Contact.COLUMN_ADDRESS, contact.getAddress());
         long id = db.insert(Contact.TABLE_NAME, null, values);
@@ -84,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columnArray = new String[]{
                 Contact.COLUMN_ID,
                 Contact.COLUMN_NAME,
-//                Contact.COLUMN_GENDER,
                 Contact.COLUMN_AVATAR,
                 Contact.COLUMN_TELEPHONE,
                 Contact.COLUMN_ADDRESS};
@@ -99,13 +95,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             @SuppressLint("Range") int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
             @SuppressLint("Range") String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
             @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
-//            int gender = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_GENDER));
             contact.setId(id);
             contact.setName(name);
             contact.setAvatar(portrait);
             contact.setTelephone(telephone);
             contact.setAddress(address);
-//            contact.setGender(gender == 1);
 
             cursor.close();
             return contact;
@@ -127,23 +121,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 Contact contact = new Contact();
-//                int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
-//                String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
-//                int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
-//                String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
-//                String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_ID));
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_NAME));
                 @SuppressLint("Range") int portrait = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_AVATAR));
                 @SuppressLint("Range") String telephone = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_TELEPHONE));
                 @SuppressLint("Range") String address = cursor.getString(cursor.getColumnIndex(Contact.COLUMN_ADDRESS));
-//                int gender = cursor.getInt(cursor.getColumnIndex(Contact.COLUMN_GENDER));
                 contact.setId(id);
                 contact.setName(name);
                 contact.setAvatar(portrait);
                 contact.setTelephone(telephone);
                 contact.setAddress(address);
-//                contact.setGender(gender == 1);
 
                 contactArrayList.add(contact);
             }
@@ -180,7 +167,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Contact.COLUMN_NAME, contact.getName());
         values.put(Contact.COLUMN_TELEPHONE, contact.getTelephone());
         values.put(Contact.COLUMN_ADDRESS, contact.getAddress());
-//        values.put(Contact.COLUMN_GENDER, businessCard.getGender() ? 1 : 0);
         int idReturnByUpdate = db.update(Contact.TABLE_NAME, values, Contact.COLUMN_ID + " =? ", new String[]{String.valueOf(id)});
         db.close();
         return idReturnByUpdate;

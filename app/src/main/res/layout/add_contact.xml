@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_contact_layout"
+    style="addContactLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="60dp"
     android:background="#000000"
-    android:backgroundTint="@color/teal_200"
+    android:backgroundTint="@color/secondary_light_grey"
     >
 
     <TextView
         android:id="@+id/dialog_title_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
+        style="@style/myTextViewStyle.title"
         android:text="New Contact"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+        />
 
     <ImageView
         android:id="@+id/img"
@@ -23,73 +21,68 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="@color/white" />
+        android:background="@drawable/ic_baseline_person_24" />
 
     <LinearLayout
         android:id="@+id/nameLayout"
+        style="@style/InputBoxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
-        android:layout_marginBottom="0dp">
+        android:layout_marginBottom="0dp"
+        android:padding="4dp">
 
         <Button
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/ic_baseline_person_24"/>
+            style="@style/inputIcon"
+            android:background="@drawable/ic_baseline_person_24" />
 
         <EditText
             android:id="@+id/name_et"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            style="@style/myEditTextStyle"
             android:hint="Name" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/phoneLayout"
+        style="@style/InputBoxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="370dp">
-
+        android:layout_marginTop="370dp"
+        android:padding="4dp">
 
         <Button
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="20dp"
+            style="@style/inputIcon"
             android:background="@drawable/ic_baseline_phone_24" />
 
         <EditText
             android:id="@+id/telephone_et"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            style="@style/myEditTextStyle"
             android:hint="Phone"
-             />
+            />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/AddressLayout"
+        style="@style/InputBoxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="440dp"
-        >
+        android:padding="4dp">
 
         <Button
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="20dp"
+            style="@style/inputIcon"
             android:background="@drawable/ic_baseline_location_on_24" />
 
         <EditText
             android:id="@+id/address_et"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="Address" />
+            style="@style/myEditTextStyle"
+            android:hint="Address"
+            />
 
     </LinearLayout>
 
@@ -103,15 +96,17 @@
         >
         <Button
             android:id="@+id/commit_btn"
-            android:layout_width="wrap_content"
+            style="@style/nightMode"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:text="submit" />
 
         <Button
             android:id="@+id/cancel_btn"
-            android:layout_width="wrap_content"
+            style="@style/nightMode"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="50dp"
             android:text="Cancel" />
     </LinearLayout>
 

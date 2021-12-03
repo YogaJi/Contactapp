@@ -42,7 +42,6 @@ import java.lang.ref.WeakReference;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button addPersonBtn;
-    //    private PopupWindow mPopupWindow;
     private RecyclerView.Adapter mAdapter;
     private ArrayList<Contact> contactArrayList = new ArrayList<>();
     private DatabaseHelper databaseHelper;
@@ -94,23 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                     }
                 }));
-        //set up popupWindow
-//        View popupView = getLayoutInflater().inflate(R.layout.add_contact, null);
-//        mPopupWindow = new PopupWindow(popupView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT, true);
-//        mPopupWindow.setTouchable(true);
-//        mPopupWindow.setOutsideTouchable(true);
-//        mPopupWindow.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
-//        //set add person button listener
-//        addPersonBtn = (Button) findViewById(R.id.add_person_btn);
-//        addPersonBtn.setOnClickListener(this);
-//
-//        addPersonBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Perform action on click
-//                mPopupWindow.showAsDropDown(v);
-//            }
-//        });
 
         //set search button listener
         Button startSearchBtn = findViewById(R.id.start_search_btn);
@@ -130,36 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return false;
             }
         });
-        //popup display
-//        mPopupWindow.getContentView().setFocusableInTouchMode(true);
-//        mPopupWindow.getContentView().setFocusable(true);
-//        mPopupWindow.getContentView().setOnKeyListener(new View.OnKeyListener() {
-//            @Override
-//            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                if (keyCode == KeyEvent.KEYCODE_MENU && event.getRepeatCount() == 0
-//                        && event.getAction() == KeyEvent.ACTION_DOWN) {
-//                    if (mPopupWindow != null && mPopupWindow.isShowing()) {
-//                        mPopupWindow.dismiss();
-//                    }
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
+
 
     }//end of onCreate
-
-//    //set popup window display
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_MENU && event.getRepeatCount() == 0) {
-//            if (mPopupWindow != null && !mPopupWindow.isShowing()) {
-//                mPopupWindow.showAtLocation(findViewById(R.id.layout_main), Gravity.CENTER, 0, 0);
-//            }
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
 
     //set on click
     @Override

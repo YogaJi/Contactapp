@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,9 +30,6 @@ public class ContactDialog  implements View.OnClickListener {
     private Button cancelBtn;
     private IGenerateContactListener mListener;
     private Contact oldContact;
-//    private Context mContext;
-    //    private CheckBox maleCb;
-//    private CheckBox femaleCb;
     private OperationTypeEnum operationType;
 
     public ContactDialog(Context context,
@@ -91,8 +89,7 @@ public class ContactDialog  implements View.OnClickListener {
         cancelBtn = view.findViewById(R.id.cancel_btn);
         commitBtn.setOnClickListener(this);
         cancelBtn.setOnClickListener(this);
-//        maleCb.setOnClickListener(this);
-//        femaleCb.setOnClickListener(this);
+        telephoneEt.setInputType(EditorInfo.TYPE_CLASS_PHONE);
     }
 
     private void initViewType() {
@@ -107,14 +104,11 @@ public class ContactDialog  implements View.OnClickListener {
                 break;
             case QUERY:
                 titleTv.setText("Contact");
-//                titleTv.setVisibility(View.GONE);
                 initViewContent();
                 commitBtn.setVisibility(View.GONE);
                 commitBtn.setEnabled(false);
                 cancelBtn.setVisibility(View.GONE);
                 cancelBtn.setEnabled(false);
-//                maleCb.setEnabled(false);
-//                femaleCb.setEnabled(false);
                 nameEt.setEnabled(false);
                 telephoneEt.setEnabled(false);
                 addressEt.setEnabled(false);
@@ -130,11 +124,6 @@ public class ContactDialog  implements View.OnClickListener {
             nameEt.setText(oldContact.getName());
             telephoneEt.setText(oldContact.getTelephone());
             addressEt.setText(oldContact.getAddress());
-//            if (oldBusinessCard.getGender()) {
-//                maleCb.setChecked(true);
-//            } else {
-//                femaleCb.setChecked(true);
-//            }
         }
     }
 
@@ -160,18 +149,6 @@ public class ContactDialog  implements View.OnClickListener {
             case R.id.cancel_btn:
                 alertDialog.dismiss();
                 break;
-//            case R.id.male_cb:
-//                //sure client only select one checkbox, can't select maleCb and female together
-//                if (maleCb.isChecked()) {
-//                    femaleCb.setChecked(false);
-//                }
-//                break;
-//            case R.id.female_cb:
-//                //sure client only select one checkbox, can't select maleCb and female together
-//                if (femaleCb.isChecked()) {
-//                    maleCb.setChecked(false);
-//                }
-//                break;
             default:
                 break;
         }
@@ -179,18 +156,9 @@ public class ContactDialog  implements View.OnClickListener {
 
     private Contact generateNewContact() {
         Contact contact = new Contact();
-//        if (!maleCb.isChecked() && !femaleCb.isChecked()) {
-//            return null;
-//        } else if (maleCb.isChecked()) {
-//            businessCard.setGender(true);
-//        } else {
-//            businessCard.setGender(false);
-//        }
         contact.setName(nameEt.getText().toString());
         contact.setTelephone(telephoneEt.getText().toString());
         contact.setAddress(addressEt.getText().toString());
-//        contact.setAvatar(contact.getGender() ? R.drawable.male_avatar_icon : R.drawable.female_avatar_icon);
-
         return contact;
     }
 

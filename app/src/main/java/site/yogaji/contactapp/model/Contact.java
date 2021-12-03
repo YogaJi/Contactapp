@@ -5,14 +5,12 @@ public class Contact {
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_AVATAR = "avatar";
     public static final String COLUMN_NAME = "name";
-    //    public static final String COLUMN_GENDER = "gender";
     public static final String COLUMN_TELEPHONE = "telephone";
     public static final String COLUMN_ADDRESS = "address";
 
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_NAME + " TEXT,"
-//            + COLUMN_GENDER + " INTEGER,"
             + COLUMN_AVATAR + " INTEGER,"
             + COLUMN_TELEPHONE + " TEXT,"
             + COLUMN_ADDRESS + " TEXT"
@@ -26,9 +24,7 @@ public class Contact {
     private int avatar;
     private String name;
     private String telephone;
-    //    private boolean gender;
     private String address;
-//    private String comment;
 
     public int getId() {
         return id;
@@ -54,14 +50,6 @@ public class Contact {
         this.name = name;
     }
 
-//    public boolean getGender() {
-//        return gender;
-//    }
-//
-//    public void setGender(boolean gender) {
-//        this.gender = gender;
-//    }
-
     public String getTelephone() {
         return telephone;
     }
@@ -77,16 +65,6 @@ public class Contact {
     public void setAddress(String address) {
         this.address = address;
     }
-
-//    public String getComment() {
-//        return comment;
-//    }
-//
-//    public void setComment(String comment) {
-//        this.comment = comment;
-//    }
-
-
 
 }
 
