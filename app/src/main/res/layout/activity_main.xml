@@ -17,36 +17,36 @@
             android:layout_height="30dp"
             android:layout_marginVertical="10dp"
             android:layout_marginTop="2dp"
-            android:layout_marginRight="4dp"
-            android:src="@drawable/ic_baseline_search_24" />
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_baseline_search_24"
+            android:contentDescription="@string/searchicon" />
 
         <EditText
             android:id="@+id/search_input_name_et"
             style="@style/SearchStyle"
-            android:hint="Input the name to search"
+            android:hint="@string/input_a_name_to_search"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:maxLines="1"
-            android:textColor="@color/front_grey"
-            android:textSize="16sp" />
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/start_search_btn"
             style="@style/nightMode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:padding="10dp"
-            android:text="Search"
+            android:text="@string/search"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/add_person_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
             android:layout_marginTop="-6dp"
             android:drawableBottom="@drawable/ic_baseline_person_add_alt_1_24" />
     </LinearLayout>

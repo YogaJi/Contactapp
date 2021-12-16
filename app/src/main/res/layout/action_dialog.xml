@@ -13,7 +13,7 @@
     <TextView
         style="@style/myTextViewStyle"
         android:layout_width="wrap_content"
-        android:text="Plan your action"
+        android:text="@string/plan_your_action"
         android:paddingBottom="20dp"
          />
 
@@ -26,15 +26,15 @@
     <Button
         android:id="@+id/edit_btn"
         style="@style/myButtonStyle"
-        android:text="Edit"
-        android:layout_marginRight="40dp"
+        android:text="@string/edit"
+        android:layout_marginEnd="40dp"
          />
 
     <Button
         android:id="@+id/delete_btn"
         style="@style/myButtonStyle"
         android:gravity="center"
-        android:text="Delete"
+        android:text="@string/delete"
         />
 
     </LinearLayout>

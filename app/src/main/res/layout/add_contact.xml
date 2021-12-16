@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/dialog_title_tv"
         style="@style/myTextViewStyle.title"
-        android:text="New Contact"
+        android:text="@string/new_contact"
         />
 
     <ImageView
@@ -21,7 +21,8 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="@drawable/ic_baseline_person_24" />
+        android:background="@drawable/ic_baseline_person_24"
+        android:contentDescription="@string/avatar" />
 
     <LinearLayout
         android:id="@+id/nameLayout"
@@ -40,7 +41,9 @@
         <EditText
             android:id="@+id/name_et"
             style="@style/myEditTextStyle"
-            android:hint="Name" />
+            android:hint="@string/name"
+            android:autofillHints=""
+            android:inputType="textPersonName" />
 
     </LinearLayout>
 
@@ -60,8 +63,9 @@
         <EditText
             android:id="@+id/telephone_et"
             style="@style/myEditTextStyle"
-            android:hint="Phone"
-            />
+            android:hint="@string/phone"
+            android:autofillHints=""
+            android:inputType="phone" />
 
     </LinearLayout>
 
@@ -70,7 +74,7 @@
         style="@style/InputBoxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="440dp"
         android:padding="4dp">
 
@@ -81,8 +85,9 @@
         <EditText
             android:id="@+id/address_et"
             style="@style/myEditTextStyle"
-            android:hint="Address"
-            />
+            android:hint="@string/address"
+            android:autofillHints=""
+            android:inputType="text" />
 
     </LinearLayout>
 
@@ -99,15 +104,15 @@
             style="@style/nightMode"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="submit" />
+            android:text="@string/submit" />
 
         <Button
             android:id="@+id/cancel_btn"
             style="@style/nightMode"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Cancel" />
+            android:layout_marginStart="50dp"
+            android:text="@string/cancel" />
     </LinearLayout>
 
 

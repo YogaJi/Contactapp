@@ -28,13 +28,25 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">36dp</item>
     </style>
+
+    <!--  Name, address TextView Style-->
+    <style name="infoTextViewColor1" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/front_grey</item>
+    </style>
+
+    <!--  Phone TextView Style-->
+    <style name="infoTextViewColor2" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
     <!--  Edit text Style-->
     <style name="myEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">200dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/front_grey</item>
-        <item name="android:background">#00FFFFFF</item>
+        <item name="android:background">@null</item>
+<!--        <item name="android:background">#00FFFFFF</item>-->
     </style>
 
     <!--  Button Style-->
@@ -49,6 +61,30 @@
         <item name="android:layout_height">45dp</item>
         <item name="android:layout_width">45dp</item>
         <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+<!--    <style name="buttonIcon" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@color/white</item>-->
+<!--    </style>-->
+
+    <!--  Search style EditText Style-->
+    <style name="SearchStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:textColor">@color/front_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/border_input_box_light</item>
+    </style>
+
+    <style name="recycleView" parent="Theme.AppCompat.DayNight">
+        <item name="android:background">@drawable/border</item>
+    </style>
+
+    <style name="recycleListView" parent="Theme.AppCompat.DayNight">
+        <item name="android:background">@color/white</item>
     </style>
 
 </resources>

@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ActionDialog actionDialog = new ActionDialog(MainActivity.this);
                         Contact contact = contactArrayList.get(position);
                         actionDialog.createDialogAndShow(contact, new IGenerateContactListener(){
+                            @SuppressLint("NotifyDataSetChanged")
                             @Override
                             public void getContact(Contact contact) {
                                 if (contact != null) {
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }//end of onCreate
 
     //set on click
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -125,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //commit the new contact
                 new ContactDialog(MainActivity.this, OperationTypeEnum.INSERT,
                         new IGenerateContactListener() {
+                            @SuppressLint("NotifyDataSetChanged")
                             @Override
                             public void getContact(Contact contact) {
                                 contactArrayList.add(contact);
@@ -154,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //life cycle to set data onResume
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onResume() {
         super.onResume();
@@ -170,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //set async task
     private static class GetAllContactAsyncTask extends AsyncTask<Void, Void, ArrayList<Contact>> {
 
-        private WeakReference<MainActivity> activityWeakReference;
+        private final WeakReference<MainActivity> activityWeakReference;
 
         GetAllContactAsyncTask(MainActivity context) {
             activityWeakReference = new WeakReference<>(context);
@@ -204,7 +208,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //set query
     private static class QueryByContactNameAsyncTask extends AsyncTask<String, Void, Contact> {
 
-        private WeakReference<MainActivity> activityWeakReference;
+//        private WeakReference<MainActivity> activityWeakReference;
+        private final WeakReference<MainActivity> activityWeakReference;
 
         QueryByContactNameAsyncTask(MainActivity context) {
             activityWeakReference = new WeakReference<>(context);
@@ -235,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .show();
                 } else {
                     Toast.makeText(mainActivity,
-                            "The people not survive in your list",
+                            "The people is not in the list",
                             Toast.LENGTH_SHORT)
                             .show();
                 }
@@ -259,11 +264,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         SettingActivity.class
                 ));
                 break;
-            case R.id.menu_delete_all:
-                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.menu_delete_all:
+//                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
+//
+//                break;
             case R.id.menu_About:
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "A00246407 Yujia Ji", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);

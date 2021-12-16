@@ -131,10 +131,10 @@ public class ContactDialog  implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.commit_btn:
-                Toast.makeText(context, "OKKKK!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Success!", Toast.LENGTH_SHORT).show();
                 Contact newContact = generateNewContact();
                 if (newContact == null) {
-                    Toast.makeText(context, "pls select gender!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "error!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -207,7 +207,7 @@ public class ContactDialog  implements View.OnClickListener {
                 if (contact != null) {
                     iGenerateContactListener.getContact(contact);
                 } else {
-                    Toast.makeText(context, "Insert BusinessCard Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Insert Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -243,7 +243,7 @@ public class ContactDialog  implements View.OnClickListener {
                 if (contact != null) {
                     iGenerateContactListener.getContact(contact);
                 } else {
-                    Toast.makeText(contextWeakReference.get(), "Insert BusinessCard Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(contextWeakReference.get(), "Insert Failed!", Toast.LENGTH_SHORT).show();
                 }
             }
         }

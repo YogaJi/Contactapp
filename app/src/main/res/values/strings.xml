@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Contacts</string>
+    <string name="input_a_name_to_search">Input a name to search</string>
+    <string name="searchicon">searchIcon</string>
+    <string name="search">Search</string>
+    <string name="new_contact">New Contact</string>
+    <string name="avatar">avatar</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="submit">submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="plan_your_action">Plan your action</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

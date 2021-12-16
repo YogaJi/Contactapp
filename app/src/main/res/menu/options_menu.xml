@@ -12,9 +12,9 @@
 <!--        app:showAsAction="ifRoom"-->
 <!--        />-->
 
-    <item android:title="Delete All"
-        android:id="@+id/menu_delete_all"
-        app:showAsAction="never"/>
+<!--    <item android:title="Delete All"-->
+<!--        android:id="@+id/menu_delete_all"-->
+<!--        app:showAsAction="never"/>-->
 
     <item android:title="About"
         android:id="@+id/menu_About"
