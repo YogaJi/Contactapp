@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:title="Settings"
+    <item android:title="@string/settings"
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_baseline_settings_24"
-        app:showAsAction="withText|always"/>
+        app:showAsAction="withText|ifRoom"/>
 
-<!--    <item android:title="add"-->
-<!--        android:id="@+id/menu_info"-->
-<!--        android:icon="@drawable/ic_baseline_person_add_alt_1_24"-->
-<!--        app:showAsAction="ifRoom"-->
-<!--        />-->
-
-<!--    <item android:title="Delete All"-->
-<!--        android:id="@+id/menu_delete_all"-->
-<!--        app:showAsAction="never"/>-->
-
-    <item android:title="About"
+    <item android:title="@string/about"
         android:id="@+id/menu_About"
         app:showAsAction="never"/>
 

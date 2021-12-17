@@ -1,34 +1,23 @@
 package site.yogaji.contactapp;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import java.util.ArrayList;
 import android.widget.TextView;
@@ -36,7 +25,6 @@ import android.widget.Toast;
 import site.yogaji.contactapp.model.Contact;
 import site.yogaji.contactapp.customdialog.ContactDialog;
 import site.yogaji.contactapp.customdialog.ActionDialog;
-import site.yogaji.contactapp.IGenerateContactListener;
 import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -197,8 +185,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity mainActivity = activityWeakReference.get();
             if (mainActivity != null && !mainActivity.isFinishing()) {
                 mainActivity.contactArrayList = contacts;
-//                mainActivity.mAdapter.notifyDataSetChanged();
-
                 RecyclerView recyclerView = mainActivity.findViewById(R.id.my_recycler_view);
                 mainActivity.mAdapter = new MyRecyclerViewAdapter(contacts);
                 recyclerView.setAdapter(mainActivity.mAdapter);
@@ -264,10 +250,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         SettingActivity.class
                 ));
                 break;
-//            case R.id.menu_delete_all:
-//                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
-//
-//                break;
+
             case R.id.menu_About:
                 Toast.makeText(this, "A00246407 Yujia Ji", Toast.LENGTH_SHORT).show();
                 break;

@@ -6,7 +6,7 @@
     android:layout_margin="6dp"
     style="@style/recycleView"
     android:orientation="horizontal">
-<!--    android:background="@drawable/border"-->
+    <!--    avatar -->
     <ImageView
         android:id="@+id/avatar_iv"
         android:layout_width="80dp"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/avatar" />
-
+    <!--    information layout -->
     <LinearLayout
         android:layout_width="182dp"
         android:layout_height="90dp"
@@ -27,6 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/avatar_iv"
         app:layout_constraintTop_toTopOf="parent">
+        <!--    name -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
                 android:text="@string/name"
                 android:textSize="20sp" />
         </LinearLayout>
-
+        <!--    phone  -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,8 +81,8 @@
             android:maxLines="1"
             android:textSize="20sp" />
 
-
     </LinearLayout>
+        <!--    address  -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +110,7 @@
             android:textSize="16sp" />
     </LinearLayout>
     </LinearLayout>
-<!--    android:background="@color/secondary_grey"-->
+    <!--    decoration line -->
     <View
         style="@style/recycleListView"
         android:layout_width="match_parent"

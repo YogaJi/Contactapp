@@ -28,6 +28,7 @@ public class ActionDialog implements View.OnClickListener {
     }
 
     public void createDialogAndShow(Contact contact, IGenerateContactListener listener) {
+        //get id
         this.mListener = listener;
         this.contact = contact;
         View actionDialog = LayoutInflater.from(mContext).inflate(R.layout.action_dialog, null);
@@ -42,18 +43,20 @@ public class ActionDialog implements View.OnClickListener {
         mDialog.show();
     }
 
-
     @Override
     public void onClick(View view) {
+        //set onclick button action
         switch (view.getId()) {
             case R.id.edit_btn:
                 mDialog.dismiss();
+                //when click edit then update contact
                 new ContactDialog(mContext,
                         OperationTypeEnum.UPDATE,
                         contact,
                         mListener);
                 break;
             case R.id.delete_btn:
+                //delete contact
                 mDialog.dismiss();
                 DeleteContactAsyncTask deleteContactAsyncTask = new DeleteContactAsyncTask(mContext);
                 deleteContactAsyncTask.execute(contact.getId());
@@ -65,7 +68,7 @@ public class ActionDialog implements View.OnClickListener {
     }
 
     private static class DeleteContactAsyncTask extends AsyncTask<Integer, Void, Void> {
-
+        //set delete async
         private WeakReference<Context> contextWeakReference;
 
         DeleteContactAsyncTask(Context context) {

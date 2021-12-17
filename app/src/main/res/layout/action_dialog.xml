@@ -22,14 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         >
-
+    <!--    edit button -->
     <Button
         android:id="@+id/edit_btn"
         style="@style/myButtonStyle"
         android:text="@string/edit"
         android:layout_marginEnd="40dp"
          />
-
+    <!--    delete button -->
     <Button
         android:id="@+id/delete_btn"
         style="@style/myButtonStyle"

@@ -47,7 +47,6 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/grey</item>
         <item name="android:background">@null</item>
-<!--        <item name="android:background">@color/grey</item>-->
     </style>
 
     <!--  Button Style-->
@@ -58,13 +57,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
+    <!--  icon Style-->
     <style name="inputIcon" parent="Widget.AppCompat.Button">
         <item name="android:layout_height">45dp</item>
         <item name="android:layout_width">45dp</item>
         <item name="android:layout_marginEnd">20dp</item>
     </style>
-
+    <!--  icon Style-->
     <style name="buttonIcon" parent="Widget.AppCompat.Button">
         <item name="android:background">@color/white</item>
     </style>
@@ -85,11 +84,11 @@
         <item name="android:textSize">16sp</item>
         <item name="android:background">@drawable/border_input_box_night</item>
     </style>
-
+    <!--  view background Style-->
     <style name="recycleView" parent="Theme.AppCompat.DayNight">
     <item name="android:background">@drawable/border_night</item>
     </style>
-
+    <!--  view background Style-->
     <style name="recycleListView" parent="Theme.AppCompat.DayNight">
         <item name="android:background">@color/black</item>
     </style>

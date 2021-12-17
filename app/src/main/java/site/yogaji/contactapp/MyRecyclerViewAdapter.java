@@ -15,7 +15,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private ArrayList<Contact> contactArrayList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView avatarIv  ;
+        //set id
+        ImageView avatarIv ;
         TextView nameTv;
         TextView telephoneTv;
         TextView addressTv;
@@ -28,7 +29,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             addressTv = itemView.findViewById(R.id.address_tv);
         }
     }
-
+    //set recycler view adapter array list
     public MyRecyclerViewAdapter(ArrayList<Contact> contacts) {
         contactArrayList = contacts;
     }

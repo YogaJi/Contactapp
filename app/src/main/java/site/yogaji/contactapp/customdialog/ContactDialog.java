@@ -1,5 +1,6 @@
 package site.yogaji.contactapp.customdialog;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
@@ -20,7 +21,7 @@ import java.lang.ref.WeakReference;
 
 
 public class ContactDialog  implements View.OnClickListener {
-    private Context context;
+    private final Context context;
     private AlertDialog alertDialog;
     private TextView titleTv;
     private EditText nameEt;
@@ -30,7 +31,7 @@ public class ContactDialog  implements View.OnClickListener {
     private Button cancelBtn;
     private IGenerateContactListener mListener;
     private Contact oldContact;
-    private OperationTypeEnum operationType;
+    private final OperationTypeEnum operationType;
 
     public ContactDialog(Context context,
                          OperationTypeEnum operationTypeEnum,
@@ -69,11 +70,7 @@ public class ContactDialog  implements View.OnClickListener {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
         alertDialog = builder.create();
-        if (operationType.equals(OperationTypeEnum.QUERY)) {
-            alertDialog.setCanceledOnTouchOutside(true);
-        } else {
-            alertDialog.setCanceledOnTouchOutside(false);
-        }
+        alertDialog.setCanceledOnTouchOutside(operationType.equals(OperationTypeEnum.QUERY));
         alertDialog.show();
 
     }
@@ -92,6 +89,7 @@ public class ContactDialog  implements View.OnClickListener {
         telephoneEt.setInputType(EditorInfo.TYPE_CLASS_PHONE);
     }
 
+    @SuppressLint("SetTextI18n")
     private void initViewType() {
 
         switch (operationType) {

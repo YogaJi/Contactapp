@@ -13,4 +13,6 @@
     <string name="plan_your_action">Plan your action</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
 </resources>
